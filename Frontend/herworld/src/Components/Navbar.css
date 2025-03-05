@@ -1,0 +1,68 @@
+/* Navbar Background & Theme */
+.custom-navbar {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Logo Text */
+  .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect on Logo */
+  .logo-text:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Navbar Links */
+  .navbar-nav .nav-link {
+    color: black !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  /* Hover Effect on Navbar Links */
+  .navbar-nav .nav-link:hover {
+    color: #4a53ca !important;
+    transform: translateY(-2px);
+  }
+  
+  /* Underline Effect */
+  .navbar-nav .nav-link::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Navbar Toggler Styling */
+  .navbar-toggler {
+    border: none;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
