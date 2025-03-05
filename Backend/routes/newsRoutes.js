@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const newsController = require('../controllers/newsController'); // Import the controller
+const { getNews, createNews } = require('../controller/newsController'); // Corrected path
 
-// Route to fetch news
-router.get('/', newsController.getNews);
+router.get('/', getNews);
+router.post('/', createNews);
 
 module.exports = router;
