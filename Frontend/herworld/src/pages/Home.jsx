@@ -15,6 +15,11 @@ const Home = () => {
     navigate("/signup"); // Redirect to /signup
   };
 
+  // Handle Feature Click
+  const handleFeatureClick = (path) => {
+    navigate(path); // Redirect to the specified path
+  };
+
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -40,7 +45,11 @@ const Home = () => {
       {/* Features Section */}
       <div className="features">
         {features.map((feature, index) => (
-          <div key={index} className="feature-card">
+          <div
+            key={index}
+            className="feature-card"
+            onClick={() => handleFeatureClick(feature.path)} // Add onClick handler
+          >
             <h3>{feature.title}</h3>
             <p>{feature.description}</p>
           </div>
@@ -50,23 +59,27 @@ const Home = () => {
   );
 };
 
-// Feature List
+// Feature List with Paths
 const features = [
   {
     title: "Fem Forum",
     description: "Your Voice, Your Power!",
+    path: "/forum", // Path for Fem Forum
   },
   {
     title: "Women Thrive",
     description: "Empower, Elevate, Excel!",
+    path: "/", // Path for Women Thrive
   },
   {
     title: "Beyond Boundaries",
     description: "Stay Informed, Stay Ahead!",
+    path: "/news", // Path for Beyond Boundaries
   },
   {
     title: "Women's Wonderland",
     description: "Explore, Create, Inspire!",
+    path: "/wonderland", // Path for Women's Wonderland
   },
 ];
 
