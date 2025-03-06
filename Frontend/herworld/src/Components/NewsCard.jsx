@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './NewsCard.css';
 const NewsCard = ({ article }) => {
     return (
         <div className="news-card">

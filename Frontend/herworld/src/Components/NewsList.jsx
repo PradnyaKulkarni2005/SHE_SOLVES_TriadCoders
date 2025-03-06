@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchNews } from '../api'; // Ensure this path is correct
-
+import './NewsList.css';
 const NewsList = () => {
     const [news, setNews] = useState([]);
     const [error, setError] = useState(null);
