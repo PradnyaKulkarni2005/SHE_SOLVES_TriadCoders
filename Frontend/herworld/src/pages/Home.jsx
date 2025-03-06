@@ -69,7 +69,7 @@ const features = [
   {
     title: "Women Thrive",
     description: "Empower, Elevate, Excel!",
-    path: "/", // Path for Women Thrive
+    path: "/share-business", // Path for Women Thrive
   },
   {
     title: "Beyond Boundaries",
