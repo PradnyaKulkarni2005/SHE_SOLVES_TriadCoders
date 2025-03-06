@@ -7,6 +7,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login'; // Ensure Login component is imported
 import BeyondBoundaries from './pages/BeyondBoundaries';
 import VideoGallery from './pages/VideoGallery';
+import BusinessForm from './pages/BusinessForm';
+import BusinessList from './Components/BusinessList';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/news" element={<BeyondBoundaries />} />
         <Route path="/wonderland" element={<VideoGallery />} />
+        <Route path="/share-business" element={<BusinessForm />} />
+        <Route path="/business-ideas" element={<BusinessList />} />
       </Routes>
     </Router>
   );

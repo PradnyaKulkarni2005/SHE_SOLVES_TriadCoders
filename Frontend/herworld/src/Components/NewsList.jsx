@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { fetchNews } from '../api'; // Ensure this path is correct
-import './NewsList.css';
+import React, { useEffect, useState } from "react";
+import { fetchNews } from "../api"; // Ensure this path is correct
+import "./NewsList.css"; // Importing the CSS file
+
 const NewsList = () => {
     const [news, setNews] = useState([]);
     const [error, setError] = useState(null);
@@ -23,27 +24,30 @@ const NewsList = () => {
         getNews();
     }, []);
 
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
-
     return (
-        <div>
-            <h1>News</h1>
-            {news.length > 0 ? (
-                <ul>
+        <div className="news-container">
+            <h1 className="news-title">Latest News</h1>
+            {error ? (
+                <div className="error-message">Error: {error}</div>
+            ) : news.length > 0 ? (
+                <ul className="news-list">
                     {news.map((article, index) => (
-                        <li key={index}>
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                            <a href={article.link} target="_blank" rel="noopener noreferrer">
+                        <li key={index} className="news-item">
+                            <h2 className="news-heading">{article.title}</h2>
+                            <p className="news-description">{article.description}</p>
+                            <a
+                                href={article.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="news-link"
+                            >
                                 Read more
                             </a>
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>No news available.</p>
+                <p className="no-news">No news available.</p>
             )}
         </div>
     );
