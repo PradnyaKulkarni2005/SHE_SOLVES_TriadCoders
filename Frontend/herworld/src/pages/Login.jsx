@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { loginUser } from "../api";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,12 +27,24 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
+    <div className="login-container">
+      <h1 className="login-title">Empower Login</h1>
+      <form onSubmit={handleLogin} className="login-form">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          onChange={(e) => setEmail(e.target.value)} 
+          required 
+          className="login-input"
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          onChange={(e) => setPassword(e.target.value)} 
+          required 
+          className="login-input"
+        />
+        <button type="submit" className="login-button">Login</button>
       </form>
     </div>
   );
