@@ -23,38 +23,46 @@ const VideoGallery = () => {
 
       {/* Category Buttons */}
       <div className="category-buttons">
-        {categories.map((category) => (
-          <button
-            key={category.name}
-            onClick={() => setSelectedCategory(category.name)}
-            className={`category-btn ${
-              selectedCategory === category.name ? "active" : ""
-            }`}
-          >
-            {category.name}
-          </button>
+  {categories.map((category) => (
+    <button
+      key={category.name}
+      onClick={() => setSelectedCategory(category.name)}
+      className={`btn-53 ${selectedCategory === category.name ? "active" : ""}`}
+    >
+      <div className="original">{category.name}</div>
+      <div className="letters">
+        {category.name.split("").map((char, index) => (
+          <span key={index}>{char}</span>
         ))}
       </div>
+    </button>
+  ))}
+</div>
+
 
       {/* Video Grid */}
-      <div className="video-grid">
-        {currentVideos.length > 0 ? (
-          currentVideos.map((video, index) => (
-            <div key={index} className="video-card">
-              <h2 className="video-title">{video.title}</h2>
-              <iframe
-                className="video-frame"
-                src={video.url}
-                title={video.title}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          ))
-        ) : (
-          <p className="no-videos">No videos available for this category.</p>
-        )}
+<div className="video-grid">
+  {currentVideos.length > 0 ? (
+    currentVideos.map((video, index) => (
+      <div key={index} className="card">
+        <div className="video-card">
+          <h2 className="video-title">{video.title}</h2>
+          <iframe
+            className="video-frame"
+            src={video.url}
+            title={video.title}
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
+    ))
+  ) : (
+    <p className="no-videos">No videos available for this category.</p>
+  )}
+</div>
+
+
     </div>
   );
 };
