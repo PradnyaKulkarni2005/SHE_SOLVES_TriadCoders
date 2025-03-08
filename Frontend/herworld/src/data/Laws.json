@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "title": "Equal Pay for Equal Work",
+      "description": "Ensures that women and men are paid equally for the same job.",
+      "explanation": "If you’re doing the same work as a male colleague, you must be paid the same salary. It’s illegal for employers to pay women less just because of their gender."
+    },
+    {
+      "id": 2,
+      "title": "Paid Leave for Mothers",
+      "description": "Provides paid leave for pregnant women.",
+      "explanation": "If you’re pregnant, you’re entitled to paid leave before and after childbirth. This law ensures you can take care of your baby without losing your job or income."
+    },
+    {
+      "id": 3,
+      "title": "Safety from Domestic Abuse",
+      "description": "Protects women from physical, emotional, and economic abuse at home.",
+      "explanation": "If you’re facing violence or abuse from your husband or family, you can seek legal protection. The court can order the abuser to stay away from you and provide financial support."
+    },
+    {
+      "id": 4,
+      "title": "Safe Workplace for Women",
+      "description": "Protects women from sexual harassment at work.",
+      "explanation": "If anyone at your workplace harasses you (e.g., inappropriate comments or advances), you can file a complaint. Your employer must take action to ensure your safety."
+    },
+    {
+      "id": 5,
+      "title": "No Dowry Allowed",
+      "description": "Makes giving or taking dowry illegal.",
+      "explanation": "Demanding or accepting dowry (money or gifts) during marriage is a crime. If you’re pressured for dowry, you can report it to the police."
+    },
+    {
+      "id": 6,
+      "title": "Free Education for Girls",
+      "description": "Ensures free and compulsory education for girls up to age 14.",
+      "explanation": "Every girl has the right to go to school and get an education. No one can stop you from studying."
+    },
+    {
+      "id": 7,
+      "title": "Equal Property Rights",
+      "description": "Gives daughters equal rights to inherit family property.",
+      "explanation": "As a daughter, you have the same right as your brothers to inherit your parents’ property. No one can deny you your share."
+    }
+  ]

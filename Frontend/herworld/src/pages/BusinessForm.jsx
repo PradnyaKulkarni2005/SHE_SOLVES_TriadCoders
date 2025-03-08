@@ -84,11 +84,16 @@ const BusinessForm = () => {
                     className="form-input"
                 />
                 <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => setPoster(e.target.files[0])}
-                    className="form-file-input"
-                />
+  type="file"
+  id="poster" // Add an ID for the label
+  accept="image/*"
+  onChange={(e) => setPoster(e.target.files[0])}
+  className="form-file-input"
+  style={{ display: "none" }} // Hide the default file input
+/>
+<label htmlFor="poster" className="file-input-label">
+  Upload Flyer/Poster(Image)
+</label>
                 <button type="submit" className="form-button" style={{width:"14%",height:"35px",color:"white",backgroundColor:"black",fontSize:"15px",padding:"5px"}}>
                     Share Idea
                 </button>

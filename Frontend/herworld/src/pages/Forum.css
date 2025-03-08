@@ -38,10 +38,11 @@ body{
   
   .forum-button {
     display: block;
-    width: 100%;
+    width: 20%;
     margin-top: 10px;
     padding: 10px;
-    background-color: #ff4d6d;
+    margin: auto;
+    background-color: #110104;
     color: white;
     font-weight: bold;
     border: none;

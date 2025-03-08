@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import './Navbar.css'; // Ensure this is imported if the styles are in a separate file
 
-function CustomNavbar() {
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <Navbar expand="lg" className="custom-navbar">
-      <Container>
-        {/* Logo */}
-        <Navbar.Brand as={Link} to="/" className="logo-text">Her World</Navbar.Brand>
+   <nav className='navbar'>
+        <Link to='/' className='navbar-logo'>Her World</Link>
+        <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
+        <div className="hamburger" onClick={toggleMenu}>
+          &#9776; {/* Hamburger icon */}
+        </div>
 
-        
-        <Navbar.Toggle aria-controls="navbar-nav" />
-
-        {/* Navbar Links */}
-        <Navbar id="navbar-nav"className='navbar'>
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>
-            <Nav.Link as={Link} to="/forum" className="nav-link">Fem Forum</Nav.Link>
-            <Nav.Link as={Link} to="/share-business" className="nav-link">Women Thrive</Nav.Link>
-            <Nav.Link as={Link} to="/news" className="nav-link">Beyond Boundaries</Nav.Link>
-            <Nav.Link as={Link} to="/wonderland" className="nav-link">Women Wonderland</Nav.Link>
-
-        
-          </Nav>
-        </Navbar>
-      </Container>
-    </Navbar>
+        <Link to='/' className='nav-link'>Home</Link>
+        <Link to='/forum' className='nav-link'>Fem Forum</Link>
+        <Link to='/share-business' className='nav-link'>Women Thrive</Link>
+        <Link to='/news' className='nav-link'>Beyond Boudaries</Link>
+        <Link to='/wonderland' className='nav-link'>Women's Wonderland</Link>
+        <Link to='/laws' className='nav-link'>Fem Guard</Link>
+      </div>
+   </nav>
   );
 }
 
-export default CustomNavbar;
+export default Navbar;

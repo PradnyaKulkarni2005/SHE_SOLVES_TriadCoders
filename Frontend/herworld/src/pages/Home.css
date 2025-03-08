@@ -46,7 +46,7 @@ body{
   width: 100%;
   margin-top: 0%;
   max-width: 1200px;
-  font-family: "Middletext", sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 .content h1 {
@@ -90,20 +90,20 @@ body{
   letter-spacing: 1.5px;
 }
 
-.auth-buttons .login-button:hover,
+/* .auth-buttons .login-button:hover,
 .auth-buttons .signup-button:hover
  {
   background-color: rgb(26, 5, 39); /* Reverse gradient on hover */
-  transform: translateY(-2px);
+  /* transform: translateY(-2px);
   color: white;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
+} */
 .auth-buttons .login-button:hover{
   background-color: white; /* Reverse gradient on hover */
   transform: translateY(-2px);
   color: black;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .auth-buttons .login-button:active,
 .auth-buttons .signup-button:active {
@@ -210,8 +210,14 @@ body{
     width: 180px;
     height: 280px;
   }
+  .features {
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+    gap: 20px;
+  }
 
   .feature-image {
-    height: 120px;
+    height: 220px;
   }
 }

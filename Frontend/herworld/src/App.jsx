@@ -10,6 +10,7 @@ import VideoGallery from './pages/VideoGallery';
 import BusinessForm from './pages/BusinessForm';
 import BusinessList from './Components/BusinessList';
 import Preloader from './Components/Preloader.jsx';
+import LawsList from './pages/LawList.jsx';
 
 function App() {
   const [showContent, setShowContent] = useState(false);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/wonderland" element={<VideoGallery />} />
             <Route path="/share-business" element={<BusinessForm />} />
             <Route path="/business-ideas" element={<BusinessList />} />
+            <Route path="/laws" element={<LawsList />} />
           </Routes>
         </>
       )}

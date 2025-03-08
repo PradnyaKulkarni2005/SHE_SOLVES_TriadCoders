@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-
+const path = require('path');
 const app = express();
 
 // Middleware
@@ -24,6 +24,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/forum', forumRoutes);
 app.use('/api/news', newsRoutes); // Corrected path
 app.use('/api/businessIdeas', businessIdeaRoutes);
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Port Configuration
 const PORT = process.env.PORT || 5001;
@@ -31,3 +32,4 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
   .on('error', (err) => {
     console.error(`Server error: ${err.message}`);
   });
+
