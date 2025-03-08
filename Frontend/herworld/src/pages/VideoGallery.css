@@ -5,16 +5,17 @@
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color: #fa99eb;
+    
     border-radius: 10px;
   }
   
   /* Title Styling */
   .title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: #1e2c3d;
+    font-family: "Navtext";
   }
   
   /* Category Buttons */
@@ -23,6 +24,8 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
+    font-family: "Poppins";
+    
   }
   
   .category-btn {
@@ -31,9 +34,10 @@
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     cursor: pointer;
     transition: all 0.3s ease;
+    background-color: linear-gradient(180deg, #e195f4, #f8cfea); 
   }
   
   .category-btn:hover {
@@ -45,7 +49,6 @@
     color: white;
   }
   
-  /* Video Grid */
   .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -89,6 +92,7 @@
 .btn-53:before {
   border: 0 solid;
   box-sizing: border-box;
+  
 }
 
 .btn-53 {
