@@ -10,7 +10,7 @@ function CustomNavbar() {
         {/* Logo */}
         <Navbar.Brand as={Link} to="/" className="logo-text">Her World</Navbar.Brand>
 
-        {/* Hamburger Icon for small screens */}
+        
         <Navbar.Toggle aria-controls="navbar-nav" />
 
         {/* Navbar Links */}

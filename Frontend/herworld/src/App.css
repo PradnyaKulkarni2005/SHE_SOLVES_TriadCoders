@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Middletext';
+    src: url('../assets/fonts/middletitle.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Titlefont';
+    src: url('../assets/fonts/titlefont2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Navtext';
+    src: url('../assets/fonts/navtext.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

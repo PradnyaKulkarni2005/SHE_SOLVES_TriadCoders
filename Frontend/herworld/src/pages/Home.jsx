@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css"; // Ensure this file contains the updated styles
-
+import boundaries from "../assets/boundaries.jpg";
+import forum from "../assets/forum.jpg";
+import thrive from "../assets/womenthrive.jpg";
+import wonderland from "../assets/wonderland.jpg";
 const Home = () => {
   const navigate = useNavigate();
 
@@ -81,25 +84,25 @@ const features = [
     title: "Fem Forum",
     description: "Your Voice, Your Power!",
     path: "/forum",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    image: forum,
   },
   {
     title: "Women Thrive",
     description: "Empower, Elevate, Excel!",
     path: "/",
-    image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    image: thrive,
   },
   {
     title: "Beyond Boundaries",
     description: "Stay Informed, Stay Ahead!",
     path: "/news",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80",
+    image: boundaries,
   },
   {
     title: "Women's Wonderland",
     description: "Explore, Create, Inspire!",
     path: "/wonderland",
-    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    image: wonderland,
   },
 ];
 

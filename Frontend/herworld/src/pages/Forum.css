@@ -1,18 +1,22 @@
-/* Forum.css */
+body{
+  background-color: #ffe4ec;
+}
 .forum-container {
     max-width: 700px;
     margin: 50px auto;
     padding: 20px;
-    background: #ffe4ec; /* Soft pink background */
+    background: white; /* Soft pink background */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .forum-title {
     text-align: center;
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
-    color: #d63384;
+    color: #491428;
+    font-family: "Navtext";
+    letter-spacing: 1.5px;
     margin-bottom: 15px;
   }
   
@@ -20,7 +24,7 @@
     width: 100%;
     height: 100px;
     padding: 10px;
-    border: 2px solid #f8a5c2;
+    border: 2px solid #d887a3;
     border-radius: 8px;
     font-size: 16px;
     resize: none;

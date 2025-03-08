@@ -5,7 +5,7 @@ const getNews = async (req, res) => {
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
         country: 'us',
-        apiKey: process.env.NEWS_API_KEY,
+        apiKey: process.env.API_KEY,
       },
     });
     res.json(response.data);

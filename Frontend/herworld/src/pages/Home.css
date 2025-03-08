@@ -1,80 +1,217 @@
 .home-container {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
-    min-height: 100vh;
+  text-align: center;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(135deg, #f8edeb, #fcd5ce); */
+  padding: 40px 20px;
+}
+
+@font-face {
+  font-family: "Navtext";
+  src: url("../assets/fonts/navtext.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Middletext";
+  src: url("../assets/fonts/middletitle.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://th.bing.com/th?id=OIF.o7lmMt7%2bv%2fwTqL9lB%2fHurQ&w=304&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7") 
+    repeat-y;
+    background-size: cover; /* Background repeats */
+  z-index: -1;
+  opacity: 0.3; /* Adjust opacity for better readability */
+}
+body{
+  background-color: #ffe4ec;
+}
+.content {
+  position: relative;
+  text-align: center;
+  color: rgb(24, 6, 65);
+  z-index: 2;
+  width: 100%;
+  margin-top: 0%;
+  max-width: 1200px;
+  font-family: "Middletext", sans-serif;
+}
+
+.content h1 {
+  font-size: 3rem; /* Adjusted for better readability */
+  letter-spacing: 2px;
+  /* margin-bottom: 15px; */
+  color: #6a1b9a; /* Purple theme */
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #6b697c;
+  font-family: "Navtext", sans-serif;
+  margin-bottom: 20px;
+}
+
+.auth-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.auth-buttons .login-button,
+.auth-buttons .signup-button {
+  padding: 12px 24px;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-family: "navtext", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: white;
+  margin: 0;
+  background: linear-gradient(135deg, #6a1b9a, #9c27b0); /* Purple gradient */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1.5px;
+}
+
+.auth-buttons .login-button:hover,
+.auth-buttons .signup-button:hover
+ {
+  background-color: rgb(26, 5, 39); /* Reverse gradient on hover */
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.auth-buttons .login-button:hover{
+  background-color: white; /* Reverse gradient on hover */
+  transform: translateY(-2px);
+  color: black;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.auth-buttons .login-button:active,
+.auth-buttons .signup-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.features {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.card {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  /* background-color: #dc96b4; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding: 15px;
+  gap: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 1s ease-out;
+  font-family: "Navtext", sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.feature-image {
+  width: 100%;
+  height: 80%; /* Fixed height for all images */
+  object-fit: cover; /* Ensures images are uniform and cropped properly */
+  border-radius: 8px;
+}
+
+.heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #444;
+  margin: 5px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
-    color: #4a148c;
-    margin-bottom: 15px;
+    font-size: 2rem;
   }
-  
+
   .hero p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .cta-button {
-    background-color: #6a1b9a;
-    color: white;
-    padding: 10px 20px;
     font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
-  
-  .cta-button:hover {
-    background-color: #4a148c;
+
+  .card {
+    width: 180px;
+    height: 280px;
   }
-  
-  .features {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
+
+  .feature-image {
+    height: 120px;
   }
-  
-  .feature-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .auth-buttons {
-    margin-top: 20px;
-  }
-  
-  .login-button,
-  .signup-button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-button {
-    background-color: #4caf50; /* Green */
-    color: white;
-  }
-  
-  .login-button:hover {
-    background-color: #45a049;
-  }
-  
-  .signup-button {
-    background-color: #008cba; /* Blue */
-    color: white;
-  }
-  
-  .signup-button:hover {
-    background-color: #0077a3;
-  }
+}
