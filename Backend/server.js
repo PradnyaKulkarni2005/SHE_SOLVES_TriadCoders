@@ -19,10 +19,11 @@ app.get('/', (req, res) => {
 const userRoutes = require('./routes/userRoutes');
 const forumRoutes = require('./routes/forumRoutes');
 const newsRoutes = require('./routes/newsRoutes'); // Corrected path
-
+const businessIdeaRoutes = require('./routes/businessIdeaRoutes');
 app.use('/api/users', userRoutes);
 app.use('/api/forum', forumRoutes);
 app.use('/api/news', newsRoutes); // Corrected path
+app.use('/api/businessIdeas', businessIdeaRoutes);
 
 // Port Configuration
 const PORT = process.env.PORT || 5001;
