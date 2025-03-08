@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.css";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,13 +26,13 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSignup}>
-        <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} required />
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Signup</button>
+    <div className="login-container">
+      <h2 className="login-title"> Signup</h2>
+      <form onSubmit={handleSignup} className="login-form">
+        <input type="text" className="login-input" placeholder="Name" onChange={(e) => setName(e.target.value)} required />
+        <input type="email" className="login-input" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
+        <input type="password" className="login-input" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
+        <button type="submit" className="login-button">Signup</button>
       </form>
     </div>
   );
