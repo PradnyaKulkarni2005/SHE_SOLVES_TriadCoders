@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const { addBusinessIdea, getAllBusinessIdeas } = require("../controllers/businessIdeaController");
+const { addBusinessIdea, getAllBusinessIdeas } = require("../controller/businessIdeaController");
 
 // Configure Multer for Image Uploads
 const storage = multer.diskStorage({
