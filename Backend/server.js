@@ -8,7 +8,16 @@ const app = express();
 // Middleware
 app.use(express.json()); // Parse JSON data
 app.use(cors()); // Allow frontend to communicate with backend
+const allowedOrigins = [
+  "https://she-solves-triad-coders.vercel.app/", 
+  "http://localhost:3000" 
+];
 
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed request methods
+  credentials: true // If using cookies/sessions
+}));
 // Connect Database
 connectDB();
 
