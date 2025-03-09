@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json()); // Parse JSON data
 app.use(cors()); // Allow frontend to communicate with backend
 const allowedOrigins = [
-  "https://she-solves-triad-coders.vercel.app/", 
+  "https://herworld-women.vercel.app/", 
   "http://localhost:3000" 
 ];
 
