@@ -2,48 +2,59 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const cookieParser = require('cookie-parser'); // 👈 Needed for handling JWT in cookies
 const path = require('path');
 
 const app = express();
 
-// ✅ 1. Connect to Database BEFORE Middleware
-connectDB();
+// ✅ Middleware
+app.use(express.json()); // Parse JSON data
 
-// ✅ 2. Middleware
-app.use(express.json()); // Parses JSON requests
-app.use(cookieParser()); // 👈 Allows reading cookies
-
-// ✅ 3. CORS Setup (Only Declare Once)
+// ✅ Properly Configure CORS
 const allowedOrigins = [
-  "https://herworld-women.vercel.app",
+  "https://herworld-women.vercel.app", 
   "http://localhost:5173"
 ];
 
 app.use(cors({
   origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true // 👈 Allows sending cookies with requests
+  credentials: true // 🔥 Allow cookies (important for JWT auth)
 }));
 
-// ✅ 4. Test Route
+// ✅ Connect Database
+connectDB();
+
+// ✅ Test Route
 app.get('/', (req, res) => {
   res.send("API is running...");
 });
 
-// ✅ 5. Import Routes
+// ✅ Routes
 const userRoutes = require('./routes/userRoutes');
 const forumRoutes = require('./routes/forumRoutes');
 const newsRoutes = require('./routes/newsRoutes');
 const businessIdeaRoutes = require('./routes/businessIdeaRoutes');
 
-// ✅ 6. Set Up Routes
 app.use('/api/users', userRoutes);
 app.use('/api/forum', forumRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/businessIdeas', businessIdeaRoutes);
 
-// ✅ 7. Start Server
+// ✅ Error Handling for CORS (Fixes Preflight Issue)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", allowedOrigins.join(",")); // 🔥 Set allowed origins
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200); // ✅ Handle preflight requests
+  }
+
+  next();
+});
+
+// ✅ Start Server
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
   .on('error', (err) => {
