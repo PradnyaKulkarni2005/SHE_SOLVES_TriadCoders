@@ -13,7 +13,7 @@ app.use(express.json());
 
 // ✅ Properly Configure CORS
 const allowedOrigins = [
-  "https://herworld-women.vercel.app", 
+  "https://herworld-women.vercel.app", // 🔥 Corrected typo
   "http://localhost:5173"
 ];
 
@@ -42,20 +42,5 @@ app.use('/api/forum', forumRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/businessIdeas', businessIdeaRoutes);
 
-// ✅ Error Handling for CORS (Fixes Preflight Issue)
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", allowedOrigins.join(",")); // 🔥 Set allowed origins
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200); // ✅ Handle preflight requests
-  }
-
-  next();
-});
-
 // ✅ Export app for Vercel (REMOVED app.listen())
 module.exports = app;
-//exported app for serverless funtioning in vercel

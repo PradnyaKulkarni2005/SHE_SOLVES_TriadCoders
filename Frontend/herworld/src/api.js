@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const API_URL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:5001/api"
-    : "https://she-solves-triad-coders.vercel.app/api";
+// ✅ Use Environment Variable for API URL
+const API_URL = import.meta.env.VITE_API_URL;
 
 // ✅ Axios Configuration for Credentials (JWT in Cookies)
 const axiosInstance = axios.create({
