@@ -2,12 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 
+// ✅ Debugging Log
+console.log("✅ Server file loaded");
+
 // ✅ Middleware
-app.use(express.json()); // Parse JSON data
+app.use(express.json());
 
 // ✅ Properly Configure CORS
 const allowedOrigins = [
@@ -25,7 +27,7 @@ app.use(cors({
 connectDB();
 
 // ✅ Test Route
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send("API is running...");
 });
 
@@ -46,7 +48,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  
+
   if (req.method === "OPTIONS") {
     return res.sendStatus(200); // ✅ Handle preflight requests
   }
@@ -54,9 +56,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ Start Server
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
-  .on('error', (err) => {
-    console.error(`Server error: ${err.message}`);
-  });
+// ✅ Export app for Vercel (REMOVED app.listen())
+module.exports = app;
+//exported app for serverless funtioning in vercel
