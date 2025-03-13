@@ -1,41 +1,46 @@
 import axios from 'axios';
 
-const API_URL =  process.env.REACT_APP_API_URL; 
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5001/api"
+    : "https://she-solves-triad-coders.vercel.app/api";
 
-// Register User
+// ✅ Axios Configuration for Credentials (JWT in Cookies)
+const axiosInstance = axios.create({
+  baseURL: API_URL,
+  withCredentials: true, // Ensures cookies are sent with requests
+});
+
+// ✅ Register User
 export const registerUser = async (userData) => {
   try {
-    const response = await fetch(`${API_URL}/users/register`, {
-      method: "POST",
+    const response = await axiosInstance.post("/users/register", userData, {
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData),
     });
-    return response.json();
+    return response.data;
   } catch (error) {
     console.error("Error registering user:", error);
     return { error: "Failed to register user" };
   }
 };
 
-// Login User
+// ✅ Login User
 export const loginUser = async (userData) => {
   try {
-    const response = await fetch(`${API_URL}/users/login`, {
-      method: "POST",
+    const response = await axiosInstance.post("/users/login", userData, {
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData),
     });
-    return response.json();
+    return response.data;
   } catch (error) {
     console.error("Error logging in user:", error);
     return { error: "Failed to login user" };
   }
 };
 
-// Fetch News
+// ✅ Fetch News
 export const fetchNews = async () => {
   try {
-    const response = await axios.get(`${API_URL}/news`);
+    const response = await axiosInstance.get("/news");
     return response.data;
   } catch (error) {
     console.error("Error fetching news:", error);
@@ -43,11 +48,11 @@ export const fetchNews = async () => {
   }
 };
 
-// Submit Business Idea
+// ✅ Submit Business Idea (With File Upload)
 export const submitBusinessIdea = async (formData) => {
   try {
-    const response = await axios.post(`${API_URL}/businessIdeas/add`, formData, {
-      headers: { "Content-Type": "multipart/form-data" }, // for handling file uploads
+    const response = await axiosInstance.post("/businessIdeas/add", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
     });
     return response.data;
   } catch (error) {
@@ -56,10 +61,10 @@ export const submitBusinessIdea = async (formData) => {
   }
 };
 
-// Fetch Business Ideas
+// ✅ Fetch Business Ideas
 export const fetchBusinessIdeas = async () => {
   try {
-    const response = await axios.get(`${API_URL}/businessIdeas/all`);
+    const response = await axiosInstance.get("/businessIdeas/all");
     return response.data;
   } catch (error) {
     console.error("Error fetching business ideas:", error);
