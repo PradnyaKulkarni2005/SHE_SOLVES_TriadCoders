@@ -70,10 +70,11 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  
 }
 
 .auth-buttons .login-button,
-.auth-buttons .signup-button {
+.signup-button {
   padding: 14px 28px;
   width: 160px;
   border: none;
@@ -81,6 +82,7 @@ body {
   font-size: 1.3rem;
   font-family: "Navtext", sans-serif;
   font-weight: 600;
+  letter-spacing: 1.5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   color: white;
@@ -89,16 +91,21 @@ body {
 }
 
 .auth-buttons .login-button:hover {
-  background-color: white;
+  
   transform: translateY(-3px);
-  color: black;
+  color: white;
+  background: black;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.auth-buttons .signup-button:hover {
+  
+  transform: translateY(-3px);
+  color: white;
+  background: black;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.auth-buttons .signup-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
+
 
 .auth-buttons .login-button:active,
 .auth-buttons .signup-button:active {
