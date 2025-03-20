@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Forum.css"; // Import the CSS file
 
+// ✅ Dynamically Set API URL Based on Environment
+const API_BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000/api/forum" // Local development
+    : "https://she-solves-triad-coders.vercel.app/api/forum"; // Hosted backend (Replace with actual link)
+
 const Forum = () => {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState("");
@@ -10,7 +16,7 @@ const Forum = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/forum");
+        const response = await axios.get(`${API_BASE_URL}`);
         setPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -23,7 +29,7 @@ const Forum = () => {
   const handlePostSubmit = async () => {
     if (newPost.trim() !== "") {
       try {
-        const response = await axios.post("http://localhost:5001/api/forum/create", {
+        const response = await axios.post(`${API_BASE_URL}/create`, {
           title: "Post Title", // You can add a title input if needed
           content: newPost,
           author: "Anonymous", // You can replace this with the actual author

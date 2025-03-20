@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./BusinessForm.css"; // Import the CSS file
 
+// ✅ Dynamically Set API URL Based on Environment
+const API_BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000/api/businessIdeas" // Local development
+    : "https://she-solves-triad-coders.vercel.app/api/businessIdeas"; // Hosted backend (Replace with actual link)
+
 const BusinessForm = () => {
     const [businessName, setBusinessName] = useState("");
     const [description, setDescription] = useState("");
@@ -17,15 +23,10 @@ const BusinessForm = () => {
         formData.append("contactDetails", contactDetails);
         if (poster) formData.append("poster", poster);
 
-        console.log("FormData:", {
-            businessName,
-            description,
-            contactDetails,
-            poster,
-        });
+        console.log("FormData:", { businessName, description, contactDetails, poster });
 
         try {
-            const response = await axios.post("http://localhost:5001/api/businessIdeas/add", formData, {
+            const response = await axios.post(`${API_BASE_URL}/add`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             console.log("Server Response:", response.data);
@@ -45,7 +46,7 @@ const BusinessForm = () => {
 
     const fetchBusinessIdeas = async () => {
         try {
-            const response = await axios.get("http://localhost:5001/api/businessIdeas/all");
+            const response = await axios.get(`${API_BASE_URL}/all`);
             setBusinessIdeas(response.data);
         } catch (error) {
             console.error("Error fetching business ideas", error);
@@ -84,17 +85,17 @@ const BusinessForm = () => {
                     className="form-input"
                 />
                 <input
-  type="file"
-  id="poster" // Add an ID for the label
-  accept="image/*"
-  onChange={(e) => setPoster(e.target.files[0])}
-  className="form-file-input"
-  style={{ display: "none" }} // Hide the default file input
-/>
-<label htmlFor="poster" className="file-input-label">
-  Upload Flyer/Poster(Image)
-</label>
-                <button type="submit" className="form-button" style={{width:"14%",height:"35px",color:"white",backgroundColor:"black",fontSize:"15px",padding:"5px"}}>
+                    type="file"
+                    id="poster" // Add an ID for the label
+                    accept="image/*"
+                    onChange={(e) => setPoster(e.target.files[0])}
+                    className="form-file-input"
+                    style={{ display: "none" }} // Hide the default file input
+                />
+                <label htmlFor="poster" className="file-input-label">
+                    Upload Flyer/Poster (Image)
+                </label>
+                <button type="submit" className="form-button" style={{ width: "14%", height: "35px", color: "white", backgroundColor: "black", fontSize: "15px", padding: "5px" }}>
                     Share Idea
                 </button>
             </form>
@@ -111,7 +112,7 @@ const BusinessForm = () => {
                             <p className="idea-contact">Contact: {idea.contactDetails}</p>
                             {idea.poster && (
                                 <img
-                                    src={`http://localhost:5001/uploads/${idea.poster}`}
+                                    src={`${API_BASE_URL.replace("/api/businessIdeas", "")}/uploads/${idea.poster}`}
                                     alt="Poster"
                                     className="idea-poster"
                                 />

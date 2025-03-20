@@ -5,22 +5,23 @@ const cors = require('cors');
 
 const app = express();
 
-// ✅ Debugging Log
-console.log("✅ Server file loaded");
+// Debugging Log
+console.log("Server file loaded");
 
-// ✅ Middleware
+// Middleware
 app.use(express.json());
 
-// ✅ Properly Configure CORS
+// ✅ Allow Local & Hosted Frontend Origins
 const allowedOrigins = [
-  "https://herworld-women.vercel.app", // 🔥 Corrected typo
-  "http://localhost:5173"
+  "http://localhost:5173",  // Local development
+  "https://herworld-women.vercel.app" 
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true // 🔥 Allow cookies (important for JWT auth)
+  origin: allowedOrigins,  // Allow both local & deployed frontend
+  credentials: true,  // Allow cookies (JWT tokens)
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
 }));
 
 // ✅ Connect Database
@@ -42,5 +43,13 @@ app.use('/api/forum', forumRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/businessIdeas', businessIdeaRoutes);
 
-// ✅ Export app for Vercel (REMOVED app.listen())
+// ✅ Export app for Vercel
 module.exports = app;
+
+// ✅ Start Server Locally (Only in Development)
+const PORT = process.env.PORT || 5000;
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}

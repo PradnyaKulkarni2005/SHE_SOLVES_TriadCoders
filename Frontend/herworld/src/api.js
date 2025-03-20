@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 // ✅ Use Environment Variable for API URL
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 // ✅ Axios Configuration for Credentials (JWT in Cookies)
 const axiosInstance = axios.create({
-  baseURL: API_URL,
+  baseURL: API_URL, 
   withCredentials: true, // Ensures cookies are sent with requests
 });
 
