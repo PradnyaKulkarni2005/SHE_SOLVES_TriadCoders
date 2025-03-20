@@ -58,7 +58,7 @@ body{
 
 /* Inputs */
 .login-input {
-  width: 100%;
+  width: 90%;
   padding: 14px 14px 14px 40px; /* Add left padding for the icon */
   border: 2px solid #e0e0e0; /* Light gray border */
   border-radius: 12px;

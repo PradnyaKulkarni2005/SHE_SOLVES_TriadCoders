@@ -19,14 +19,14 @@
 
 .navbar-logo {
   font-family: 'Titlefont', sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   color:#ffe4ec;
   text-decoration: none;
 }
 
 .hamburger {
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   display: none; /* Hidden by default */
 }
@@ -41,7 +41,7 @@
   text-decoration: none;
   color: #ffe4ec;
   font-family: "Navtext", sans-serif;
-  font-size: 16px;
+  font-size: 19px;
 }
 
 .nav-link:hover {

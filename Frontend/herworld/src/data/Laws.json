@@ -40,5 +40,35 @@
       "title": "Equal Property Rights",
       "description": "Gives daughters equal rights to inherit family property.",
       "explanation": "As a daughter, you have the same right as your brothers to inherit your parents’ property. No one can deny you your share."
+    },
+    {
+      "id": 8,
+      "title": "Right to Say No",
+      "description": "No one can force you to marry against your will.",
+      "explanation": "If someone is pressuring you to get married or forcing you into a relationship, you have the legal right to say no. Forced marriage is illegal, and you can seek help from the police or women’s organizations."
+    },
+    {
+      "id": 9,
+      "title": "Free Legal Help for Women",
+      "description": "Women in need can get free legal assistance.",
+      "explanation": "If you cannot afford a lawyer, the government provides free legal help to women for cases like domestic violence, divorce, and workplace harassment. You can visit a legal aid center for support."
+    },
+    {
+      "id": 10,
+      "title": "Right to Report a Crime Anytime",
+      "description": "Women can file a complaint at any time, even years later.",
+      "explanation": "If you have faced any crime like harassment, domestic violence, or abuse, you can report it anytime. There is no time limit for filing complaints in serious cases."
+    },
+    {
+      "id": 11,
+      "title": "Free Medical Help for Assault Survivors",
+      "description": "Hospitals must give free treatment to women who face assault or violence.",
+      "explanation": "If you are a victim of violence, hospitals must treat you immediately without asking for money first. They cannot refuse to help you."
+    },
+    {
+      "id": 12,
+      "title": "Right to Keep Your Identity Private",
+      "description": "A woman’s identity must be kept secret in sensitive cases.",
+      "explanation": "If you report crimes like sexual harassment or assault, your name and details must not be shared in public. The law protects your privacy."
     }
   ]

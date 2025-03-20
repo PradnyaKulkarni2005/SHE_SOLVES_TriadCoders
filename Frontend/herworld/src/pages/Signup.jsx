@@ -32,7 +32,7 @@ const Signup = () => {
         <input type="text" className="login-input" placeholder="Name" onChange={(e) => setName(e.target.value)} required />
         <input type="email" className="login-input" placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
         <input type="password" className="login-input" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit" className="login-button">Signup</button>
+        <button type="submit" className="login">Signup</button>
       </form>
     </div>
   );

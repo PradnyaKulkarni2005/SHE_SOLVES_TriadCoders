@@ -5,6 +5,7 @@ import boundaries from "../assets/boundaries.jpg";
 import forum from "../assets/forum.jpg";
 import thrive from "../assets/womenthrive.jpg";
 import wonderland from "../assets/wonderland.jpg";
+import laws from "../assets/laws.jpg";
 const Home = () => {
   const navigate = useNavigate();
 
@@ -104,6 +105,12 @@ const features = [
     path: "/wonderland",
     image: wonderland,
   },
+  {
+    title: "Fem Forum",
+    description: "Know your rights !",
+    path: "/laws",
+    image: laws,
+  }
 ];
 
 export default Home;

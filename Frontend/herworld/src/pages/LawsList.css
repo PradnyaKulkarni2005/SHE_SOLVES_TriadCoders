@@ -1,96 +1,126 @@
 /* Loading Message */
 .loading-message {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    margin-top: 20px;
-  }
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Laws Container */
+.laws-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Dynamic columns */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Law Card */
+.law-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  max-width: 450px;
   
-  /* Laws Container */
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.law-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.card-content .explanation {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Animation for Card Content */
+.card-content {
+  transition: transform 0.3s ease;
+}
+
+.law-card:hover .card-content {
+  transform: scale(1.05);
+}
+
+/* Background Gradient Animation */
+.law-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #fceaf5, #fbbde3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.law-card:hover::before {
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1240px) {
   .laws-container {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    /* flex-wrap: wrap; */
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
+      grid-template-columns: repeat(3, minmax(250px, 1fr));
+      gap: 15px;
   }
-  
-  /* Law Card */
+
   .law-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    width: 300px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 100%;
   }
-  
-  .law-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1024px) {
+  .laws-container {
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      gap: 15px;
   }
-  
-  /* Card Content */
-  .card-content {
-    padding: 20px;
+
+  .law-card {
+      max-width: 100%;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .laws-container {
+      grid-template-columns: 1fr; /* Single column for better readability */
+  }
+
+  .law-card {
+      max-width: 90%;
+      margin: 0 auto;
+  }
+
   .card-content h2 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
-    color: #333;
+      font-size: 1.3rem;
   }
-  
-  .card-content p {
-    font-size: 1rem;
-    color: #555;
-    margin: 0 0 10px;
-  }
-  
+
+  .card-content p,
   .card-content .explanation {
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 10px;
+      font-size: 0.95rem;
   }
-  
-  /* Animation for Card Content */
-  .card-content {
-    transition: transform 0.3s ease;
-  }
-  
-  .law-card:hover .card-content {
-    transform: scale(1.05);
-  }
-  
-  /* Background Gradient Animation */
-  .law-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #fceaf5, #fbbde3);
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-  }
-  
-  .law-card:hover::before {
-    opacity: 1;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .laws-container {
-      grid-template-columns: repeat(2,1fr);
-    }
-    .law-card {
-      width: 100%;
-      max-width: 400px;
-      font-size: x-small;
-    }
-  }
+}
