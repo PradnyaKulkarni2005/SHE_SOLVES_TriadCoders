@@ -106,7 +106,7 @@ const features = [
     image: wonderland,
   },
   {
-    title: "Fem Forum",
+    title: "Fem Guard",
     description: "Know your rights !",
     path: "/laws",
     image: laws,
