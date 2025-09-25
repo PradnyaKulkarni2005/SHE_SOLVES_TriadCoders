@@ -1,0 +1,45 @@
+# This just tells Docker Compose which file format version you’re using.
+# "3.8" is the current stable one.
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb+srv://pradnyakulkarni:Pradnya%401245@herworld.uvhgu.mongodb.net/herworlddb?retryWrites=true&w=majority&ssl=true
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Backend:/app
+
+  client:
+    build:
+      context: ./Frontend/herworld
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+
+# backend: → This defines your Node/Express backend app as a service.
+# build:
+# context: ./backend → tells Docker where the source code is. It looks in the backend folder.
+# dockerfile: Dockerfile → uses the Dockerfile inside backend to build the image.
+# restart: unless-stopped → If the container crashes, Docker will restart it automatically (good for production).
+# environment:
+# PORT: 5000 → inside the container, your server runs on port 5000.
+# MONGO_URI: ... → the connection string for your MongoDB Atlas database. This is how your backend knows where the DB lives.
+# ports:
+# "5000:5000" → maps container’s port 5000 → your computer’s port 5000.
+# So you can reach your backend at: http://localhost:5000
+
+# client: → This defines your React Vite frontend app.
+# build:
+# context: ./frontend/herworld → tells Docker where your React code is.
+# dockerfile: Dockerfile → uses the Dockerfile inside herworld.
+# restart: unless-stopped → keeps the frontend container running.
+# ports:
+# "80:80" → maps container’s port 80 → your computer’s port 80.
+# So you can reach your frontend at: http://localhost
