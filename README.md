@@ -35,7 +35,7 @@ HerWorld is a comprehensive web platform created to empower women through commun
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/herworld.git
+https://github.com/PradnyaKulkarni2005/SHE_SOLVES_TriadCoders.git
 cd herworld
 
 # Install frontend dependencies
