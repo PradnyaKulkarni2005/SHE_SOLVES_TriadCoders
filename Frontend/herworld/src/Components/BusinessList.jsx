@@ -26,22 +26,29 @@ export default function BusinessList() {
 
   useEffect(() => {
     let mounted = true;
+
     const fetchIdeas = async () => {
       setLoading(true);
       setError(null);
+
       try {
-        const response = await fetch("http://localhost:5000/business-ideas/all");
+        const response = await fetch(
+          `${API_BASE_URL}/api/businessIdeas/all`
+        );
         const data = await response.json();
+
         if (mounted) {
           setIdeas(Array.isArray(data) ? data : []);
         }
       } catch (err) {
         console.error("Error fetching business ideas", err);
-        if (mounted) setError("Unable to load business ideas. Please try again later.");
+        if (mounted)
+          setError("Unable to load business ideas. Please try again later.");
       } finally {
         if (mounted) setLoading(false);
       }
     };
+
     fetchIdeas();
     return () => {
       mounted = false;
