@@ -16,6 +16,7 @@ import BusinessForm from "./pages/BusinessForm";
 import BusinessList from "./Components/BusinessList";
 import Preloader from "./Components/Preloader.jsx";
 import LawsList from "./pages/LawList.jsx";
+import AIAssistant from "./Components/AIAssistant.jsx";
 
 function NotFound() {
   return (
@@ -76,6 +77,7 @@ function App() {
                 <Route path="/share-business" element={<BusinessForm />} />
                 <Route path="/business-ideas" element={<BusinessList />} />
                 <Route path="/laws" element={<LawsList />} />
+                <Route path="/ai-assistant" element={<AIAssistant />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>

@@ -7,6 +7,8 @@ import forum from "../assets/forum.jpg";
 import thrive from "../assets/womenthrive.jpg";
 import wonderland from "../assets/wonderland.jpg";
 import laws from "../assets/laws.jpg";
+import ai from "../assets/ai.jpg";
+
 
 const features = [
   {
@@ -49,6 +51,15 @@ const features = [
     color: "from-indigo-400 to-pink-400",
     icon: "⚖️"
   },
+  {
+  title: "Her AI Guide",
+  description: "Career, Mental Health, Business & Legal Support",
+  path: "/ai-assistant",
+  image: ai,
+  color: "from-emerald-400 to-cyan-400",
+  icon: "🤖"
+},
+
 ];
 
 export default function Home() {
