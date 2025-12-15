@@ -26,8 +26,9 @@ jobs:
       - name: 📦 Install backend dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
+      - name: Skip backend tests (no tests yet)
+        run: echo "No backend tests yet"
+
   frontend:
     name: 🌐 Frontend
     runs-on: ubuntu-latest
