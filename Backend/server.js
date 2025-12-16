@@ -41,13 +41,15 @@ const userRoutes = require("./routes/userRoutes");
 const forumRoutes = require("./routes/forumRoutes");
 const newsRoutes = require("./routes/newsRoutes");
 const businessIdeaRoutes = require("./routes/businessIdeaRoutes");
-const aiRoutes = require("./routes/ai.routes"); // ✅ ADD THIS
+const aiRoutes = require("./routes/ai.routes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/forum", forumRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/businessIdeas", businessIdeaRoutes);
-app.use("/api/ai", aiRoutes); // ✅ ADD THIS
+app.use("/api/ai", aiRoutes); 
+const youtubeRoutes = require("./routes/youtube.routes");
+app.use("/api/videos", youtubeRoutes);
 
 // Export app for Vercel
 module.exports = app;
