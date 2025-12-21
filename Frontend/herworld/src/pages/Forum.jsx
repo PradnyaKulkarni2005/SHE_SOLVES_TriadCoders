@@ -72,36 +72,7 @@ const Forum = () => {
           </p>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500 text-sm">Total Posts</p>
-                <p className="text-2xl font-bold text-gray-900">{posts.length}</p>
-              </div>
-              <TrendingUp className="w-8 h-8 text-purple-600" />
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500 text-sm">Members</p>
-                <p className="text-2xl font-bold text-gray-900">1.2k</p>
-              </div>
-              <Users className="w-8 h-8 text-blue-600" />
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500 text-sm">Active Today</p>
-                <p className="text-2xl font-bold text-gray-900">84</p>
-              </div>
-              <MessageSquare className="w-8 h-8 text-green-600" />
-            </div>
-          </div>
-        </div>
+        
 
         {/* Create Post Section */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-8 hover:shadow-xl transition-shadow">
