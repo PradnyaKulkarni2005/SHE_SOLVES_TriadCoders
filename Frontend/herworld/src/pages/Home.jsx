@@ -229,21 +229,21 @@ export default function Home() {
                 className="flex items-center gap-8 pt-4"
               >
                 <div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                  {/* <div className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                     10k+
-                  </div>
+                  </div> */}
                   <div className="text-sm text-gray-600">Active Members</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                  {/* <div className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
                     50k+
-                  </div>
+                  </div> */}
                   <div className="text-sm text-gray-600">Stories Shared</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+                  {/* <div className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
                     100%
-                  </div>
+                  </div> */}
                   <div className="text-sm text-gray-600">Safe Space</div>
                 </div>
               </motion.div>
